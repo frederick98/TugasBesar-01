@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class AddFragment extends Fragment implements View.OnClickListener {
+public class HalamanUtama extends Fragment implements View.OnClickListener {
     TextView tvTitle;
     EditText etInput;
     Button btnSubmit;
@@ -21,12 +20,12 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
 
 
-    public AddFragment(){
+    public HalamanUtama(){
 
     }
 
-    public static AddFragment newInstance(String title){
-        AddFragment fragment = new AddFragment();
+    public static HalamanUtama newInstance(String title){
+        HalamanUtama fragment = new HalamanUtama();
         Bundle args = new Bundle();
         args.putString("title",title);
         fragment.setArguments(args);
@@ -36,7 +35,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.add_fragment,container,false);
+        View view = inflater.inflate(R.layout.halaman_utama,container,false);
 
         this.tvTitle = view.findViewById(R.id.tv_title);
 
@@ -74,7 +73,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if(view.getId()==this.btnSubmit.getId()){
             this.listener.submitValue(Integer.parseInt(this.etInput.getText().toString()));
-            this.listener.changePage(2);
+            this.listener.changePage(1);
         }
     }
 }
