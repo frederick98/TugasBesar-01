@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,23 +11,21 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/tv_title"
-        android:text="Add"
-        android:textSize="24dp"
-        />
+        android:text="@string/tv_add"
+        android:textSize="24dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:gravity="center" >
+        
         <TextView
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:id="@+id/tv_operator"
-            android:text="Operator :"
-            android:textSize="24dp"
-            />
+            android:text="@string/tv_operator"
+            android:textSize="24dp"/>
 
         <Spinner
             android:id="@+id/spinner1"
@@ -36,44 +33,43 @@
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
             android:entries="@array/operator_arrays"
-            android:prompt="@string/operator_prompt"
-            />
+            android:prompt="@string/operator_prompt"/>
+
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <TextView
+            android:id="@+id/tv_operand"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:id="@+id/tv_operand"
-            android:text="Operand :"
-            android:textSize="24dp"
-            />
+            android:text="@string/tv_operand"
+            android:textSize="24dp"/>
 
         <EditText
             android:id="@+id/et_input"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:hint=""></EditText>
+            android:hint="">
+        </EditText>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:gravity="center">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_submit"
-            android:text="Submit"
-            android:textAlignment="center"
-            >
+            android:text="@string/tv_submit"
+            android:textAlignment="center">
         </Button>
     </LinearLayout>
 

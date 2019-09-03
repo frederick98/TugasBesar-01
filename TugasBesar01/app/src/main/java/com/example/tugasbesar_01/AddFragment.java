@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -64,11 +63,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
         }
         else{
-            throw new ClassCastException(context.toString()
-                    +"must implement FragmentListener");
+            throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
     }
-
 
     @Override
     public void onClick(View view) {
