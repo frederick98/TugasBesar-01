@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">TugasBesar-01</string>
+<<<<<<< Updated upstream
     <string name="btn_result">Result</string>
     <string name="btn_clear">Clear Field</string>
     <string name="btn_save">Save</string>
+=======
+    <string name="operator_prompt">Pilih operator</string>
+    <string-array name="operator_arrays">
+        <item>+</item>
+        <item>-</item>
+        <item>*</item>
+        <item>/</item>
+    </string-array>
+>>>>>>> Stashed changes
 </resources>
