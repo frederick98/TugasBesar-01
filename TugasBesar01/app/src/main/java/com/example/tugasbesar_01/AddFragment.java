@@ -52,7 +52,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp1.setAdapter(adapter);
 
-
         return view;
     }
 
