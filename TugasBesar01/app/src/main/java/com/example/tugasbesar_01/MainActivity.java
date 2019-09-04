@@ -8,18 +8,21 @@ import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements FragmentListener, IMainActivity {
     AddFragment fragment2;
     FragmentManager fragmentManager;
     HalamanUtama fragment1;
+    MainPresenter mp;
     //pake androidx jgn lupa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        this.fragment1 = HalamanUtama.newInstance("Calculator");
+        this.mp = new MainPresenter(this);
+        this.fragment1 = HalamanUtama.newInstance("Calculator",this, mp);
         this.fragment2 = AddFragment.newInstance("Add");
         this.fragmentManager = this.getSupportFragmentManager();
 
@@ -69,6 +72,36 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     @Override
     public void changeValue(int value) {
+
+    }
+
+    @Override
+    public void clearList() {
+
+    }
+
+    @Override
+    public void saveList() {
+
+    }
+
+    @Override
+    public void delateNum(int position) {
+
+    }
+
+    @Override
+    public void showResult() {
+
+    }
+
+    @Override
+    public void updateList(List<Numop> num) {
+
+    }
+
+    @Override
+    public void resetAddForm() {
 
     }
 }

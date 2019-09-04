@@ -1,5 +1,6 @@
 package com.example.tugasbesar_01;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -14,18 +16,22 @@ import androidx.fragment.app.Fragment;
 
 public class HalamanUtama extends Fragment implements View.OnClickListener {
     TextView tvTitle;
-    EditText etInput;
-    Button btnSubmit;
-    Spinner sp1;
+    Button add_Button;
+    Button res_Button;
+    Button clr_Button;
+    Button save_Button;
+    ListView lv;
     FragmentListener listener;
+    NumberListAdapter adapter;
 
 
     public HalamanUtama(){
 
     }
 
-    public static HalamanUtama newInstance(String title){
+    public static HalamanUtama newInstance(String title, Activity myAct, MainPresenter presenter){
         HalamanUtama fragment = new HalamanUtama();
+        fragment.adapter = new NumberListAdapter(myAct, presenter);
         Bundle args = new Bundle();
         args.putString("title",title);
         fragment.setArguments(args);
@@ -39,11 +45,18 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
         this.tvTitle = view.findViewById(R.id.tv_title);
 
-        this.etInput = view.findViewById(R.id.et_input);
+        this.lv = view.findViewById(R.id.lv_history);
 
-        this.btnSubmit = view.findViewById(R.id.btn_submit);
+        this.lv.setAdapter(adapter);
+        this.add_Button = view.findViewById(R.id.fab);
 
-        this.btnSubmit.setOnClickListener(this);
+        this.add_Button.setOnClickListener(this);
+
+        this.clr_Button.setOnClickListener(this);
+
+        this.res_Button.setOnClickListener(this);
+
+        this.save_Button.setOnClickListener(this);
 
 
 //        this.sp1 = (Spinner) view.findViewById(R.id.spinner1);
@@ -71,9 +84,17 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==this.btnSubmit.getId()){
-            this.listener.submitValue(Integer.parseInt(this.etInput.getText().toString()));
+        if(view.getId()==this.add_Button.getId()){
             this.listener.changePage(1);
+        }
+        else if(view.getId()==this.res_Button.getId()){
+
+        }
+        else if(view.getId()==this.save_Button.getId()){
+
+        }
+        else if(view.getId()==this.clr_Button.getId()){
+
         }
     }
 }
