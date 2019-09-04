@@ -48,7 +48,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         this.lv = view.findViewById(R.id.lv_history);
 
         this.lv.setAdapter(adapter);
-        this.add_Button = view.findViewById(R.id.fab);
+        this.add_Button = view.findViewById(R.id.btn_add);
 
         this.add_Button.setOnClickListener(this);
 

@@ -10,7 +10,8 @@
     <string name="tv_operand">Operand :</string>
     <string name="tv_submit">Submit</string>
     <string name="operator_prompt">Pilih operator</string>
-    
+    <string name="btn_add">Add</string>
+
     <string-array name="operator_arrays">
         <item>+</item>
         <item>-</item>
