@@ -40,6 +40,7 @@ public class NumberListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View convertView, ViewGroup parent) {
+        /*
         // inflate the layout for each list row
         ViewHolder viewHolder;
 
@@ -53,21 +54,30 @@ public class NumberListAdapter extends BaseAdapter {
         }
         viewHolder.updateView((Numop)this.getItem(i),i);
 
+         */
+
         // returns the view for the current row
         return convertView;
     }
 
     public void update(List<Numop> getNumop){
+        /*
         this.numop.clear();
         this.numop.addAll((getNumop));
         this.notifyDataSetChanged();
+
+         */
     }
 
     public void tambah(String str, int num) {
+        /*
+
         this.numop.add(new Numop(str, num));
         this.notifyDataSetChanged();
+         */
     }
     private class ViewHolder implements View.OnClickListener{
+        /*
         protected TextView num;
         protected TextView opt;
         protected ImageButton btnDelete;
@@ -82,20 +92,28 @@ public class NumberListAdapter extends BaseAdapter {
             this.btnDelete.setOnClickListener(this);
             view.setOnClickListener(this);
             this.presenter = presenter;
+
+         */
         }
 
         @Override
         public void onClick(View view) {
             //Log.d(this.getClass().getCanonicalName(), "Position :"+position);
+            /*
             if (view.getId() == this.btnDelete.getId()){
                 this.presenter.deleteList(this.position);
             }
+
+             */
         }
 
         public void updateView(Numop numops, int position){
+        /*
             this.position = position;
             this.num.setText(numops.getValue());
             this.opt.setText(numops.getOperator());
+            
+         */
         }
     }
 }

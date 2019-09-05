@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
         this.mp = new MainPresenter(this);
         this.fragment1 = HalamanUtama.newInstance("Calculator",this, mp);
         this.fragment2 = AddFragment.newInstance("Add");
@@ -35,10 +36,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
                 android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.operator_arrays));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sp.setAdapter(adapter);
+
+         */
     }
 
     @Override
     public void changePage(int page) {
+        /*
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
 
         if(page==1){
@@ -63,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
             }
         }
         ft.commit();
+        
+         */
     }
 
     @Override

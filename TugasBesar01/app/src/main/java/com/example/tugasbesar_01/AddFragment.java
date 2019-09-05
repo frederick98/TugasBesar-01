@@ -25,11 +25,14 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     }
 
     public static AddFragment newInstance(String title){
+        /*
         AddFragment fragment = new AddFragment();
         Bundle args = new Bundle();
         args.putString("title",title);
         fragment.setArguments(args);
         return fragment;
+
+         */
     }
 
     @Override
@@ -38,13 +41,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.add_fragment,container,false);
 
         this.tvTitle = view.findViewById(R.id.tv_title);
-
         this.etInput = view.findViewById(R.id.et_input);
-
         this.btnSubmit = view.findViewById(R.id.btn_submit);
-
         this.btnSubmit.setOnClickListener(this);
-
 
 //        this.sp1 = (Spinner) view.findViewById(R.id.spinner1);
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
@@ -57,6 +56,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onAttach(Context context){
+    /*
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
@@ -65,13 +65,18 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         else{
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
+
+     */
     }
 
     @Override
     public void onClick(View view) {
+        /*
         if(view.getId()==this.btnSubmit.getId()){
             this.listener.submitValue(Integer.parseInt(this.etInput.getText().toString()));
             this.listener.changePage(2);
         }
+        
+         */
     }
 }

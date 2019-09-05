@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -30,17 +28,21 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     }
 
     public static HalamanUtama newInstance(String title, Activity myAct, MainPresenter presenter){
+        /*
         HalamanUtama fragment = new HalamanUtama();
         fragment.adapter = new NumberListAdapter(myAct, presenter);
         Bundle args = new Bundle();
         args.putString("title",title);
         fragment.setArguments(args);
         return fragment;
+
+         */
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
+        /*
         View view = inflater.inflate(R.layout.halaman_utama,container,false);
 
         this.tvTitle = view.findViewById(R.id.tv_title);
@@ -65,11 +67,14 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 //        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 //        sp1.setAdapter(adapter);
 
+         */
+
         return view;
     }
 
     @Override
     public void onAttach(Context context){
+        /*
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
@@ -79,11 +84,14 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
             throw new ClassCastException(context.toString()
                     +"must implement FragmentListener");
         }
+
+         */
     }
 
 
     @Override
     public void onClick(View view) {
+        /*
         if(view.getId()==this.add_Button.getId()){
             this.listener.changePage(1);
         }
@@ -96,5 +104,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         else if(view.getId()==this.clr_Button.getId()){
 
         }
+        
+         */
     }
 }
