@@ -12,11 +12,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class AddFragment extends Fragment implements View.OnClickListener {
-    TextView tvTitle;
-    EditText etInput;
-    Button btnSubmit;
-    Spinner sp1;
+public class AddFragment extends Fragment {
     FragmentListener listener;
 
 
@@ -24,15 +20,10 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     }
 
-    public static AddFragment newInstance(String title){
-        /*
-        AddFragment fragment = new AddFragment();
-        Bundle args = new Bundle();
-        args.putString("title",title);
-        fragment.setArguments(args);
-        return fragment;
+    public static AddFragment newInstance(){
 
-         */
+        AddFragment fragment = new AddFragment();
+        return fragment;
     }
 
     @Override
@@ -40,23 +31,13 @@ public class AddFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.add_fragment,container,false);
 
-        this.tvTitle = view.findViewById(R.id.tv_title);
-        this.etInput = view.findViewById(R.id.et_input);
-        this.btnSubmit = view.findViewById(R.id.btn_submit);
-        this.btnSubmit.setOnClickListener(this);
-
-//        this.sp1 = (Spinner) view.findViewById(R.id.spinner1);
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-//                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.operator_arrays));
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        sp1.setAdapter(adapter);
 
         return view;
     }
 
     @Override
     public void onAttach(Context context){
-    /*
+
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
@@ -65,18 +46,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         else{
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
-
-     */
     }
 
-    @Override
-    public void onClick(View view) {
-        /*
-        if(view.getId()==this.btnSubmit.getId()){
-            this.listener.submitValue(Integer.parseInt(this.etInput.getText().toString()));
-            this.listener.changePage(2);
-        }
-        
-         */
-    }
 }

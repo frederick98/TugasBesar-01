@@ -10,65 +10,50 @@ import android.widget.Spinner;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener, IMainActivity {
-    AddFragment fragment2;
-    FragmentManager fragmentManager;
-    HalamanUtama fragment1;
-    MainPresenter mp;
+public class MainActivity extends AppCompatActivity implements FragmentListener {
+   protected AddFragment fragment2;
+   protected FragmentManager fragmentManager;
+   protected HalamanUtama fragment1;
     //pake androidx jgn lupa
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*
-        this.mp = new MainPresenter(this);
-        this.fragment1 = HalamanUtama.newInstance("Calculator",this, mp);
-        this.fragment2 = AddFragment.newInstance("Add");
+        this.fragment1 = HalamanUtama.newInstance();
+        this.fragment2 = AddFragment.newInstance();
         this.fragmentManager = this.getSupportFragmentManager();
 
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
-        ft.replace(R.id.fragment_container,this.fragment1).commit();
-
-
-        Spinner sp = (Spinner) findViewById(R.id.spinner1);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.operator_arrays));
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp.setAdapter(adapter);
-
-         */
+        ft.add(R.id.fragment_container, this.fragment1).addToBackStack(null).commit();
     }
 
     @Override
     public void changePage(int page) {
-        /*
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
 
-        if(page==1){
-            if(this.fragment1.isAdded()){
+        if (page == 1) {
+            if (this.fragment1.isAdded()) {
                 ft.show(this.fragment1);
-            } else{
-                ft.add(R.id.fragment_container,this.fragment1);
+            } else {
+                ft.add(R.id.fragment_container, this.fragment1);
             }
 
-            if(this.fragment2.isAdded()){
+            if (this.fragment2.isAdded()) {
                 ft.hide(this.fragment2);
             }
-        }else if(page==2){
-            if(this.fragment2.isAdded()){
+        } else if (page == 2) {
+            if (this.fragment2.isAdded()) {
                 ft.show(this.fragment2);
-            }else{
-                ft.add(R.id.fragment_container,this.fragment2);
+            } else {
+                ft.add(R.id.fragment_container, this.fragment2);
             }
 
-            if(this.fragment1.isAdded()){
+            if (this.fragment1.isAdded()) {
                 ft.hide(this.fragment1);
             }
         }
         ft.commit();
-        
-         */
     }
 
     @Override
@@ -100,14 +85,5 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     public void showResult() {
 
     }
-
-    @Override
-    public void updateList(List<Numop> num) {
-
-    }
-
-    @Override
-    public void resetAddForm() {
-
-    }
 }
+
