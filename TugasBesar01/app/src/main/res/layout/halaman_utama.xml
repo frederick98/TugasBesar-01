@@ -64,31 +64,36 @@
         android:layout_height="56dp"
         android:layout_gravity="bottom"
         android:orientation="horizontal"
-        android:layout_weight="2"
+        android:layout_weight="3"
+        android:gravity="center"
         >
 
         <Button
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_add" />
+            android:text="@string/btn_add"
+            />
 
         <Button
             android:id="@+id/btn_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_result" />
+            android:text="@string/btn_result"
+            />
 
         <Button
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_clear" />
+            android:text="@string/btn_clear"
+            />
 
         <Button
             android:id="@+id/btn_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_save" />
+            android:text="@string/btn_save"
+            />
     </LinearLayout>
 </LinearLayout>

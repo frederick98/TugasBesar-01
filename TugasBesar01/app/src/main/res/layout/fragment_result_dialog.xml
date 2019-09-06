@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:id="@+id/tv_ResultIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Result is :"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="10dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="300dp"
+            android:layout_height="59dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_closeDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:text="Close"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="10dp">
+
+        </Button>
+    </LinearLayout>
+</FrameLayout>

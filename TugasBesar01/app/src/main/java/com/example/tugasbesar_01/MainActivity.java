@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
    protected AddFragment fragment2;
    protected FragmentManager fragmentManager;
    protected HalamanUtama fragment1;
+
     //pake androidx jgn lupa
 
     @Override
@@ -57,13 +58,29 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
-    public void submitValue(int value) {
-       // this.fragment1.resultVal.setText(this.fragment2.input.getText().toString());
+    public void submitValue() { //masukin input kedalam listView
+
     }
 
     @Override
-    public void changeValue(int value) {
-
+    public void changeValue() { //ganti tv ResultValue halamanUtama
+        String opt = this.fragment2.sp.getSelectedItem().toString();
+        int value = Integer.parseInt(this.fragment2.input.getText().toString());
+        int curr = Integer.parseInt(this.fragment1.resultVal.getText().toString());
+        if(opt.equals("+")){
+            curr = curr + value;
+        }
+        else if(opt.equals("-")){
+            curr = curr - value;
+        }
+        else if(opt.equals("*")){
+            curr = curr * value;
+        }
+        else{
+            curr = curr / value;
+        }
+        String res = String.valueOf(curr);
+        this.fragment1.resultVal.setText(res);
     }
 
     @Override
