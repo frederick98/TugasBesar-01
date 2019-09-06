@@ -8,4 +8,5 @@ public interface FragmentListener {
     void saveList();
     void delateNum(int position);
     void showResult();
+    void closeApp();
 }

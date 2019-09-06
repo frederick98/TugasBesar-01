@@ -1,10 +1,14 @@
 package com.example.tugasbesar_01;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -14,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
    protected AddFragment fragment2;
    protected FragmentManager fragmentManager;
    protected HalamanUtama fragment1;
+    DrawerLayout drawer;
+    private Toolbar toolbar;
 
     //pake androidx jgn lupa
 
@@ -27,6 +33,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.fragment1).addToBackStack(null).commit();
+
+        this.toolbar = findViewById(R.id.toolbar);
+        this.setSupportActionBar(toolbar);
+
+//        ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.openDrawer,R.string.closeDrawer);
+//        drawer.addDrawerListener(abdt);
+//        abdt.syncState();
     }
 
     @Override
@@ -55,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             }
         }
         ft.commit();
+
     }
 
     @Override
@@ -101,6 +115,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     @Override
     public void showResult() {
 
+    }
+
+    @Override
+    public void closeApp(){
+        this.moveTaskToBack(true);
+        this.finish();
     }
 }
 

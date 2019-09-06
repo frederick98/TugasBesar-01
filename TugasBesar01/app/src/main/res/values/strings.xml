@@ -11,6 +11,8 @@
     <string name="tv_submit">Submit</string>
     <string name="operator_prompt">Pilih operator</string>
     <string name="btn_add">Add</string>
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
 
     <string-array name="operator_arrays">
         <item>+</item>
