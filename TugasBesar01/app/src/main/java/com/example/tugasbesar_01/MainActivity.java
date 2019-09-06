@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     @Override
     public void submitValue(int value) {
-
+       // this.fragment1.resultVal.setText(this.fragment2.input.getText().toString());
     }
 
     @Override

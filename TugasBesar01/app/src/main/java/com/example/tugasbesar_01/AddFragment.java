@@ -12,9 +12,10 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-public class AddFragment extends Fragment {
+public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
-
+    Button submit;
+    EditText input;
 
     public AddFragment(){
 
@@ -31,6 +32,10 @@ public class AddFragment extends Fragment {
                              Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.add_fragment,container,false);
 
+        this.input = view.findViewById(R.id.et_input);
+
+        this.submit = view.findViewById(R.id.btn_submit);
+        this.submit.setOnClickListener(this);
 
         return view;
     }
@@ -48,4 +53,10 @@ public class AddFragment extends Fragment {
         }
     }
 
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==this.submit.getId()){
+            listener.changePage(1);
+        }
+    }
 }

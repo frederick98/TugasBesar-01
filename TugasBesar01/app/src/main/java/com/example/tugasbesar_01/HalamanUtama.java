@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 public class HalamanUtama extends Fragment implements View.OnClickListener {
     Button add_Button;
     FragmentListener listener;
+    TextView resultVal;
 
 
     public HalamanUtama(){
@@ -31,6 +33,8 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState){
 
         View view = inflater.inflate(R.layout.halaman_utama,container,false);
+
+        this.resultVal = view.findViewById(R.id.tv_resultValue);
 
         this.add_Button = view.findViewById(R.id.btn_add);
 
@@ -65,7 +69,6 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-
         if(view.getId()==this.add_Button.getId()){
             this.listener.changePage(2);
         }

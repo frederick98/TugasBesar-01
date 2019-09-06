@@ -5,23 +5,42 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:weightSum="10"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
 
         <TextView
             android:id="@+id/tv_judul"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_name"
             android:background="@drawable/border"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:id="@+id/tv_resultValue"
+            android:textSize="20dp"
+            android:padding="10dp"
+
+            >
+        </TextView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="656dp">
+        android:layout_height="656dp"
+        android:layout_weight="6"
+        >
+
 
         <ListView
             android:id="@+id/lv_history"
@@ -44,7 +63,9 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_weight="2"
+        >
 
         <Button
             android:id="@+id/btn_add"

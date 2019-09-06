@@ -54,6 +54,7 @@
             android:id="@+id/et_input"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:hint="">
         </EditText>
     </LinearLayout>
