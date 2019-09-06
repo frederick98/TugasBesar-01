@@ -6,7 +6,7 @@ public interface FragmentListener {
     void changeValue();
     void clearList();
     void saveList();
-    void delateNum(int position);
+    void deleteNum(int position);
     void showResult();
     void closeApp();
 }

@@ -8,18 +8,23 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
-import android.view.View;
+import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.view.View;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+public class MainActivity extends AppCompatActivity implements FragmentListener, IMainActivity {
    protected AddFragment fragment2;
    protected FragmentManager fragmentManager;
    protected HalamanUtama fragment1;
     DrawerLayout drawer;
     private Toolbar toolbar;
+
+   protected ListView numopList;
+   protected OperandAdaptor oa;
+   protected Presenter presenter;
 
     //pake androidx jgn lupa
 
@@ -27,6 +32,11 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.presenter = new Presenter(this);
+        this.oa = new OperandAdaptor(this, this.presenter);
+        this.numopList.setAdapter(this.oa);
+
         this.fragment1 = HalamanUtama.newInstance();
         this.fragment2 = AddFragment.newInstance();
         this.fragmentManager = this.getSupportFragmentManager();
@@ -108,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
-    public void delateNum(int position) {
+    public void deleteNum(int position) {
 
     }
 
@@ -116,11 +126,18 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     public void showResult() {
 
     }
+    @Override
+    public void updateList(List<Numop> num) {
 
+    }
     @Override
     public void closeApp(){
         this.moveTaskToBack(true);
         this.finish();
+    }
+    @Override
+    public void resetAddForm() {
+
     }
 }
 

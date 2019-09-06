@@ -25,7 +25,6 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     }
 
     public static HalamanUtama newInstance(){
-
         HalamanUtama fragment = new HalamanUtama();
         return fragment;
     }

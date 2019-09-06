@@ -8,9 +8,9 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:id="@+id/tv_title"
         android:text="@string/tv_add"
         android:textSize="24dp"/>
 
@@ -21,9 +21,9 @@
         android:gravity="center" >
         
         <TextView
+            android:id="@+id/tv_operator"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:id="@+id/tv_operator"
             android:text="@string/tv_operator"
             android:textSize="24dp"/>
 
