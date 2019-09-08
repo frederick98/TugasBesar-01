@@ -14,11 +14,14 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import java.util.List;
+
 public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
     Button submit;
     EditText input;
     Spinner sp;
+    MainPresenter presenter;
 
     public AddFragment(){
 
@@ -42,6 +45,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         this.submit = view.findViewById(R.id.btn_submit);
         this.submit.setOnClickListener(this);
 
+
         return view;
     }
 
@@ -61,8 +65,13 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if(view.getId()==this.submit.getId()){
+            int valTemp = Integer.parseInt(this.input.getText().toString());
+            String optTemp = this.sp.getSelectedItem().toString();
+            this.presenter.addList(optTemp,valTemp);
             listener.changeValue();
             listener.changePage(1);
         }
     }
+
+
 }

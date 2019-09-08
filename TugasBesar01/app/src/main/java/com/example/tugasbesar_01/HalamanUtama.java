@@ -7,17 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
 public class HalamanUtama extends Fragment implements View.OnClickListener {
-    Button add_Button;
+  //  Button add_Button;
     Button res_Button;
     FragmentListener listener;
     TextView resultVal;
+    FloatingActionButton fab;
+
+    protected MainPresenter presenter;
+    protected NumopListAdapter nla;
+    protected ListView numopList;
 
 
     public HalamanUtama(){
@@ -37,7 +46,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
         this.resultVal = view.findViewById(R.id.tv_resultValue);
 
-        this.add_Button = view.findViewById(R.id.btn_add);
+        //this.add_Button = view.findViewById(R.id.btn_add);
 
         this.res_Button = view.findViewById(R.id.btn_result);
         this.res_Button.setOnClickListener(new View.OnClickListener(){
@@ -50,8 +59,17 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
             }
         });
 
+         this.fab = view.findViewById(R.id.floating_action_button);
 
-        this.add_Button.setOnClickListener(this);
+
+       // this.add_Button.setOnClickListener(this);
+        this.fab.setOnClickListener(this);
+
+        this.numopList = view.findViewById(R.id.lv_history);
+        this.nla = new NumopListAdapter(getActivity(),this.presenter);
+        numopList.setAdapter(this.nla);
+
+
 
 
         return view;
@@ -75,8 +93,10 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==this.add_Button.getId()){
+        if(view.getId()==this.fab.getId()){
             this.listener.changePage(2);
         }
     }
+
+
 }

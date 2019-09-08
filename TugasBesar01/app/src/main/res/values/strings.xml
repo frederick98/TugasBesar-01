@@ -2,7 +2,7 @@
     <string name="app_name">TugasBesar-01</string>
 
     <string name="btn_result">Result</string>
-    <string name="btn_clear">Clear Field</string>
+    <string name="btn_clear">Clear</string>
     <string name="btn_save">Save</string>
     <string name="tv_name">Calculator</string>
     <string name="tv_add">Add</string>
