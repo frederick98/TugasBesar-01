@@ -16,19 +16,19 @@ import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
-public class AddFragment extends Fragment implements View.OnClickListener {
+public class AddFragment extends Fragment implements View.OnClickListener,IMainActivity{
     FragmentListener listener;
     Button submit;
     EditText input;
     Spinner sp;
     MainPresenter presenter;
+    NumopListAdapter nla;
 
     public AddFragment(){
 
     }
 
-    public static AddFragment newInstance(){
-
+    public static AddFragment newInstance(MainPresenter presenter){
         AddFragment fragment = new AddFragment();
         return fragment;
     }
@@ -45,6 +45,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         this.submit = view.findViewById(R.id.btn_submit);
         this.submit.setOnClickListener(this);
 
+        this.presenter = new MainPresenter(this);
+        this.nla = new NumopListAdapter(getActivity(),this.presenter);
 
         return view;
     }
@@ -74,4 +76,15 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     }
 
 
+    @Override
+    public void updateList(List<Numop> num) {
+        this.nla.update(num);
+    }
+
+    @Override
+    public void resetAddForm() {
+    //   this.input.setText("");
+//        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+//        imm.hideSoftInputFromWindow(this.fragment2.submit.getWindowToken(),0);
+    }
 }
