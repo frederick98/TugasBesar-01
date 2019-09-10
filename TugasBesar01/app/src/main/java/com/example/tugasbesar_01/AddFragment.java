@@ -40,6 +40,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.add_fragment, container, false);
 
         this.input = view.findViewById(R.id.et_input);
+        this.adapter= new Adapter(getActivity());
 
         this.sp = view.findViewById(R.id.spinner1);
 
@@ -70,19 +71,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             listener.changeValue();
             listener.changePage(1);
         }
-    }
-
-    public void onPause()
-    {
-        super.onPause();
-        this.saveDisplay.saveInput(this.input.getText().toString());
-        this.saveDisplay.saveSpinner(this.sp.getOnItemClickListener().toString());
-    }
-
-    public void onResume()
-    {
-        super.onResume();
-
     }
 
 }
