@@ -16,27 +16,28 @@ import androidx.fragment.app.Fragment;
 
 import java.util.List;
 
-public class AddFragment extends Fragment implements View.OnClickListener,IMainActivity{
+public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
     Button submit;
     EditText input;
     Spinner sp;
-    MainPresenter presenter;
-    NumopListAdapter nla;
+    Presenter presenter;
+    Adapter adapter;
+    SaveDisplay saveDisplay;
 
-    public AddFragment(){
+    public AddFragment() {
 
     }
 
-    public static AddFragment newInstance(MainPresenter presenter){
+    public static AddFragment newInstance(Presenter presenter) {
         AddFragment fragment = new AddFragment();
         return fragment;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
-        View view = inflater.inflate(R.layout.add_fragment,container,false);
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.add_fragment, container, false);
 
         this.input = view.findViewById(R.id.et_input);
 
@@ -45,46 +46,43 @@ public class AddFragment extends Fragment implements View.OnClickListener,IMainA
         this.submit = view.findViewById(R.id.btn_submit);
         this.submit.setOnClickListener(this);
 
-        this.presenter = new MainPresenter(this);
-        this.nla = new NumopListAdapter(getActivity(),this.presenter);
 
         return view;
     }
 
     @Override
-    public void onAttach(Context context){
+    public void onAttach(Context context) {
 
         super.onAttach(context);
-        if(context instanceof FragmentListener){
+        if (context instanceof FragmentListener) {
             this.listener = (FragmentListener) context;
 
-        }
-        else{
+        } else {
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
     }
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==this.submit.getId()){
-            int valTemp = Integer.parseInt(this.input.getText().toString());
-            String optTemp = this.sp.getSelectedItem().toString();
-            this.presenter.addList(optTemp,valTemp);
+        if (view.getId() == this.submit.getId()) {
+
+            this.adapter.add(this.input.getText().toString());
             listener.changeValue();
             listener.changePage(1);
         }
     }
 
-
-    @Override
-    public void updateList(List<Numop> num) {
-        this.nla.update(num);
+    public void onPause()
+    {
+        super.onPause();
+        this.saveDisplay.saveInput(this.input.getText().toString());
+        this.saveDisplay.saveSpinner(this.sp.getOnItemClickListener().toString());
     }
 
-    @Override
-    public void resetAddForm() {
-    //   this.input.setText("");
-//        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//        imm.hideSoftInputFromWindow(this.fragment2.submit.getWindowToken(),0);
+    public void onResume()
+    {
+        super.onResume();
+
     }
+
 }

@@ -19,18 +19,16 @@ import java.util.List;
 //pake androidx jgn lupa
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
-   protected AddFragment fragment2;
-   protected FragmentManager fragmentManager;
-   protected HalamanUtama fragment1;
-   protected DrawerLayout drawer;
-   private Toolbar toolbar;
+    protected AddFragment fragment2;
+    protected FragmentManager fragmentManager;
+    protected HalamanUtama fragment1;
+    protected DrawerLayout drawer;
+    private Toolbar toolbar;
 
 
-
-//   protected OperandAdaptor oa;
-   protected MainPresenter presenter;
+    //   protected OperandAdaptor oa;
+    protected Presenter presenter;
 //   protected NumopListAdapter nla;
-
 
 
     @Override
@@ -43,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //        this.numopList.setAdapter(this.oa);
 
 
-     // this.presenter = new MainPresenter(this);
-       //this.presenter.loadData();
+        // this.presenter = new MainPresenter(this);
+        //this.presenter.loadData();
 
         this.fragment1 = HalamanUtama.newInstance();
         this.fragment2 = AddFragment.newInstance(presenter);
@@ -100,16 +98,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         String opt = this.fragment2.sp.getSelectedItem().toString();
         int value = Integer.parseInt(this.fragment2.input.getText().toString());
         int curr = Integer.parseInt(this.fragment1.resultVal.getText().toString());
-        if(opt.equals("+")){
+        if (opt.equals("+")) {
             curr = curr + value;
-        }
-        else if(opt.equals("-")){
+        } else if (opt.equals("-")) {
             curr = curr - value;
-        }
-        else if(opt.equals("*")){
+        } else if (opt.equals("*")) {
             curr = curr * value;
-        }
-        else{
+        } else {
             curr = curr / value;
         }
         String res = String.valueOf(curr);
@@ -137,21 +132,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
-    public void closeApp(){
+    public void closeApp() {
         this.moveTaskToBack(true);
         this.finish();
     }
 
-//    @Override
-//    public void updateList(List<Numop> num) {
-//        this.fragment1.nla.update(num);
-//    }
-//
-//    @Override
-//    public void resetAddForm() {
-//        this.fragment2.input.setText("");
-//        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//        imm.hideSoftInputFromWindow(this.fragment2.submit.getWindowToken(),0);
-//    }
 }
 

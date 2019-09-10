@@ -24,8 +24,8 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     TextView resultVal;
     FloatingActionButton fab;
 
-    protected MainPresenter presenter;
-    protected NumopListAdapter nla;
+    protected Presenter presenter;
+    protected Adapter nla;
     protected ListView numopList;
 
 
@@ -66,8 +66,10 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         this.fab.setOnClickListener(this);
 
         this.numopList = view.findViewById(R.id.lv_history);
-        this.nla = new NumopListAdapter(getActivity(),this.presenter);
+        this.nla = new Adapter(getActivity());
         numopList.setAdapter(this.nla);
+
+
 
 
 
