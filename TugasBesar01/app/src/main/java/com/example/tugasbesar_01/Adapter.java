@@ -32,7 +32,6 @@ public class Adapter extends BaseAdapter {
     public void clearItem(){
         this.listItems.clear();
         this.notifyDataSetChanged();
-
     }
 
     @Override

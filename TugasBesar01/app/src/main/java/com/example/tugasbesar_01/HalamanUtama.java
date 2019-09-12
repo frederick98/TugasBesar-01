@@ -66,6 +66,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
        // this.add_Button.setOnClickListener(this);
         this.fab.setOnClickListener(this);
+        this.btnClear.setOnClickListener(this);
 
         this.numopList = view.findViewById(R.id.lv_history);
         this.nla = new Adapter(getActivity());
@@ -93,7 +94,8 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if(view.getId()==this.fab.getId()){
             this.listener.changePage(2);
-        }  else if (view.getId() == this.btnClear.getId()){
+        }
+        else if (view.getId() == this.btnClear.getId()){
             this.listener.clearList();
             this.nla.notifyDataSetChanged();
         }
