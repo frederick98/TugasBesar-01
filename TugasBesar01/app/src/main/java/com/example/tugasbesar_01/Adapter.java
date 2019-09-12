@@ -27,12 +27,12 @@ public class Adapter extends BaseAdapter {
     public void add(String item){
         this.listItems.add(item);
         this.notifyDataSetChanged();
-        Log.d("debug", "test" + listItems.size());
     }
 
-    public void clear(){
+    public void clearItem(){
         this.listItems.clear();
         this.notifyDataSetChanged();
+
     }
 
     @Override

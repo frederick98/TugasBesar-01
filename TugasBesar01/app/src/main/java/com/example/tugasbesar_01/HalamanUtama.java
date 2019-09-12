@@ -94,13 +94,20 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         if(view.getId()==this.fab.getId()){
             this.listener.changePage(2);
         }  else if (view.getId() == this.btnClear.getId()){
-            this.nla.clear();
+            this.listener.clearList();
+            this.nla.notifyDataSetChanged();
         }
     }
 
 
     public void addListview(String text){
         this.nla.add(text);
+    }
+
+
+    public  void clearListView()
+    {
+        this.nla.clearItem();
     }
 
 }

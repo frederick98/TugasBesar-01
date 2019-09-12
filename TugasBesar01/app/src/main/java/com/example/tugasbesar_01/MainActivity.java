@@ -107,6 +107,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     @Override
     public void clearList() {
 
+        fragment1.clearListView();
+
     }
 
     @Override
