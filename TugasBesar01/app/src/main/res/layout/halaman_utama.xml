@@ -53,44 +53,39 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:gravity="center"
-        >
+        android:gravity="center">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:orientation="horizontal"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
-<!--            <Button-->
-<!--                android:id="@+id/btn_add"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="@string/btn_add"-->
-<!--                />-->
-
+            <!--  Button disini tadinya merupakan button add biasa bukan floating <-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_add"-->
+<!--            android:layout_width="wrap_content"  -->
+<!--            android:layout_height="wrap_content"  -->
+<!--            android:text="@string/btn_add"/>  -->
+            
             <Button
                 android:id="@+id/btn_result"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_result"
-                />
+                android:text="@string/btn_result"/>
 
             <Button
                 android:id="@+id/btn_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_clear"
-                />
+                android:text="@string/btn_clear"/>
 
             <Button
                 android:id="@+id/btn_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/btn_save"
-            />
+                android:text="@string/btn_save"/>
         </LinearLayout>
 
 
@@ -104,8 +99,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_plus_24"
-                android:layout_alignParentRight="true"
-            />
+                android:layout_alignParentRight="true"/>
         </RelativeLayout>
     </LinearLayout>
 

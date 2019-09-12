@@ -1,20 +1,16 @@
 package com.example.tugasbesar_01;
 
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import java.util.List;
 
 public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
@@ -66,8 +62,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == this.submit.getId()) {
-
-            listener.addList(this.input.getText().toString());
+            listener.addList("" + this.sp.getSelectedItem().toString() + " " + this.input.getText().toString());
             listener.changeValue();
             listener.changePage(1);
         }

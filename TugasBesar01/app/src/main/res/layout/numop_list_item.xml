@@ -11,28 +11,23 @@
         android:id="@+id/tv_opt_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
-        />
+        android:text=""/>
 
     <TextView
         android:id="@+id/tv_num_value"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        />
+        android:layout_height="wrap_content"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/ic_menu_delete"
-            android:layout_alignParentRight="true"
-            />
+            android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
 
