@@ -49,15 +49,10 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         //this.btnAdd = view.findViewById(R.id.btn_add);
 
         this.btnResult = view.findViewById(R.id.btn_result);
-        this.btnResult.setOnClickListener(new View.OnClickListener(){
+        this.btnResult.setOnClickListener(this);
 
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                ResultDialogFragment resultDialogFragment = new ResultDialogFragment();
-                resultDialogFragment.show(ft,resultVal.getText().toString());
-            }
-        });
+
+
 
          this.fab = view.findViewById(R.id.floating_action_button);
          this.btnClear = view.findViewById(R.id.btn_clear);
@@ -97,7 +92,13 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         }
         else if (view.getId() == this.btnClear.getId()){
             this.listener.clearList();
-            this.nla.notifyDataSetChanged();
+
+        }
+        else if(view.getId()==this.btnResult.getId())
+        {
+            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            ResultDialogFragment resultDialogFragment = new ResultDialogFragment();
+            resultDialogFragment.show(ft,resultVal.getText().toString());
         }
     }
 
