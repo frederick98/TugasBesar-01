@@ -39,8 +39,4 @@ public class SaveDisplay {
     {
         return sharedPref.getString(KEY_SPINNER,"");
     }
-
-
-
-    
 }

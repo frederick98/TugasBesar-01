@@ -5,6 +5,8 @@ public interface FragmentListener {
     void changeValue();
     void closeApp();
     void addList(String text);
+
+    
     void clearList();
     void saveList();
     void deleteNum(int position);

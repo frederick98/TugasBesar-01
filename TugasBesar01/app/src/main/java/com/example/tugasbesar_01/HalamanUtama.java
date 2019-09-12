@@ -15,11 +15,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 public class HalamanUtama extends Fragment implements View.OnClickListener {
-  //  Button add_Button;
-    Button res_Button;
+    //Button btnAdd;
+    Button btnResult;
+    Button btnClear;
     FragmentListener listener;
     TextView resultVal;
     FloatingActionButton fab;
@@ -46,10 +46,10 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
         this.resultVal = view.findViewById(R.id.tv_resultValue);
 
-        //this.add_Button = view.findViewById(R.id.btn_add);
+        //this.btnAdd = view.findViewById(R.id.btn_add);
 
-        this.res_Button = view.findViewById(R.id.btn_result);
-        this.res_Button.setOnClickListener(new View.OnClickListener(){
+        this.btnResult = view.findViewById(R.id.btn_result);
+        this.btnResult.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
@@ -60,6 +60,8 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         });
 
          this.fab = view.findViewById(R.id.floating_action_button);
+         this.btnClear = view.findViewById(R.id.btn_clear);
+
 
 
        // this.add_Button.setOnClickListener(this);
@@ -91,12 +93,13 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if(view.getId()==this.fab.getId()){
             this.listener.changePage(2);
+        }  else if (view.getId() == this.btnClear.getId()){
+            this.nla.clear();
         }
     }
 
 
     public void addListview(String text){
-
         this.nla.add(text);
     }
 

@@ -1,22 +1,14 @@
 package com.example.tugasbesar_01;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.ListView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-import android.view.View;
 
-import java.util.List;
 //pake androidx jgn lupa
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
@@ -105,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
             curr = curr - value;
         } else if (opt.equals("*")) {
             curr = curr * value;
-        } else {
+        } else if(opt.equals("/")){
             curr = curr / value;
         }
         String res = String.valueOf(curr);
@@ -141,8 +133,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     @Override
     public void addList(String text) {
         fragment1.addListview(text);
-        Log.d("debug", text)       ;
-        
     }
 
 }

@@ -1,7 +1,6 @@
 package com.example.tugasbesar_01;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +19,22 @@ public class Adapter extends BaseAdapter {
     protected TextView tv_num_value;
     protected AddFragment addFragment;
 
-    public Adapter(Activity activity)
-    {
+    public Adapter(Activity activity){
         this.activity=activity;
         this.listItems= new ArrayList<String>();
     }
 
-    public void add(String item)
-    {
+    public void add(String item){
         this.listItems.add(item);
         this.notifyDataSetChanged();
         Log.d("debug", "test" + listItems.size());
     }
+
+    public void clear(){
+        this.listItems.clear();
+        this.notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return this.listItems.size();
@@ -49,7 +52,6 @@ public class Adapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-
         View itemView = this.activity.getLayoutInflater().inflate(R.layout.numop_list_item,null);
         this.tv_num_value=itemView.findViewById(R.id.tv_num_value);
         this.tv_num_value.setText(listItems.get(i));
