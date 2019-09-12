@@ -67,7 +67,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if (view.getId() == this.submit.getId()) {
 
-            this.adapter.add(this.input.getText().toString());
+            listener.addList(this.input.getText().toString());
             listener.changeValue();
             listener.changePage(1);
         }

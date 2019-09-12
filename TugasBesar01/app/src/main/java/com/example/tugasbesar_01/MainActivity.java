@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
@@ -135,6 +136,13 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     public void closeApp() {
         this.moveTaskToBack(true);
         this.finish();
+    }
+
+    @Override
+    public void addList(String text) {
+        fragment1.addListview(text);
+        Log.d("debug", text)       ;
+        
     }
 
 }

@@ -2,6 +2,7 @@ package com.example.tugasbesar_01;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -29,6 +30,7 @@ public class Adapter extends BaseAdapter {
     {
         this.listItems.add(item);
         this.notifyDataSetChanged();
+        Log.d("debug", "test" + listItems.size());
     }
     @Override
     public int getCount() {
@@ -50,7 +52,7 @@ public class Adapter extends BaseAdapter {
 
         View itemView = this.activity.getLayoutInflater().inflate(R.layout.numop_list_item,null);
         this.tv_num_value=itemView.findViewById(R.id.tv_num_value);
-        this.tv_num_value.setText(this.addFragment.input.getText().toString());
+        this.tv_num_value.setText(listItems.get(i));
 
         return itemView;
     }

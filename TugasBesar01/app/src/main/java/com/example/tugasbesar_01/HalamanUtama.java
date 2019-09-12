@@ -68,12 +68,6 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         this.numopList = view.findViewById(R.id.lv_history);
         this.nla = new Adapter(getActivity());
         numopList.setAdapter(this.nla);
-
-
-
-
-
-
         return view;
     }
 
@@ -100,5 +94,10 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         }
     }
 
+
+    public void addListview(String text){
+
+        this.nla.add(text);
+    }
 
 }
