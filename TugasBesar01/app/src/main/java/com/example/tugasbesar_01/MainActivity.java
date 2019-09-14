@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 
 //pake androidx jgn lupa
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected HalamanUtama fragment1;
     protected DrawerLayout drawer;
     private Toolbar toolbar;
+
 
 
     //   protected OperandAdaptor oa;
@@ -93,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         } else if(opt.equals("/")){
             curr = curr / value;
         }
+
         String res = String.valueOf(curr);
         this.fragment1.resultVal.setText(res);
     }

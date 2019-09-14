@@ -83,6 +83,7 @@ public class Adapter extends BaseAdapter {
         protected ImageButton btnDelete;
         protected Adapter adapter;
         private int position;
+        protected HalamanUtama hm;
 
 
         public ViewHolder(View view, Adapter adapter) {
