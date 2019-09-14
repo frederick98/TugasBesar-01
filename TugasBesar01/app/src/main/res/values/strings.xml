@@ -15,7 +15,6 @@
     <string name="closeDrawer">close</string>
 
     <string-array name="operator_arrays">
-        <item>Choose Operand</item>
         <item>+</item>
         <item>-</item>
         <item>*</item>

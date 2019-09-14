@@ -62,7 +62,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == this.submit.getId()) {
-            listener.addList("" + this.sp.getSelectedItem().toString() + " " + this.input.getText().toString());
+            Numop op = new Numop(this.sp.getSelectedItem().toString(),Integer.parseInt(this.input.getText().toString()));
+            listener.addList(op );
             listener.changeValue();
             listener.changePage(1);
         }

@@ -81,10 +81,6 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     }
 
-    @Override
-    public void submitValue() { //masukin input kedalam listView
-
-    }
 
     @Override
     public void changeValue() { //ganti tv ResultValue halamanUtama
@@ -110,19 +106,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
-    public void saveList() {
-
+    public void deleteListPos(int position) {
+        fragment1.listener.deleteListPos(position);
     }
 
-    @Override
-    public void deleteNum(int position) {
-
-    }
-
-    @Override
-    public void showResult() {
-
-    }
 
     @Override
     public void closeApp() {
@@ -131,8 +118,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     }
 
     @Override
-    public void addList(String text) {
-        fragment1.addListview(text);
+    public void addList(Numop n) {
+        fragment1.addListview(n);
     }
 
 }

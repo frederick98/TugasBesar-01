@@ -23,6 +23,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     FragmentListener listener;
     TextView resultVal;
     FloatingActionButton fab;
+    Button btnDel;
 
     protected Presenter presenter;
     protected Adapter nla;
@@ -56,6 +57,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
          this.fab = view.findViewById(R.id.floating_action_button);
          this.btnClear = view.findViewById(R.id.btn_clear);
+         this.btnDel = view.findViewById(R.id.btn_delete);
 
 
 
@@ -92,7 +94,6 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         }
         else if (view.getId() == this.btnClear.getId()){
             this.listener.clearList();
-
         }
         else if(view.getId()==this.btnResult.getId())
         {
@@ -103,14 +104,15 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     }
 
 
-    public void addListview(String text){
-        this.nla.add(text);
+    public void addListview(Numop numops) {
+        this.nla.add(numops);
     }
 
 
-    public  void clearListView()
-    {
+    public void clearListView(){
         this.nla.clearItem();
+        this.resultVal.setText("0");
     }
+
 
 }

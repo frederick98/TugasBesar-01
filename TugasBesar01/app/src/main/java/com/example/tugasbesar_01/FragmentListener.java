@@ -4,10 +4,7 @@ public interface FragmentListener {
     void changePage(int page);
     void changeValue();
     void closeApp();
-    void addList(String text);
+    void addList(Numop numops);
     void clearList();
-    void saveList();
-    void deleteNum(int position);
-    void showResult();
-    void submitValue();
+    void deleteListPos(int position);
 }
