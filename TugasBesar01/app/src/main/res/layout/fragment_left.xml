@@ -16,21 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Calculator"
+            android:text="@string/fL_tv_calc"
             android:id="@+id/tv_halUtamaFg"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Add Value"
+            android:text="@string/fl_tv_add"
             android:id="@+id/tv_addFg"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="Exit"
+            android:text="@string/fL_tv_exit"
             android:id="@+id/tv_exit"/>
 
         <TextView
