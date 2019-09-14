@@ -6,43 +6,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:weightSum="10">
+    android:weightSum="9">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="0dp"
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="1"
+        android:layout_weight="0"
         >
-
-
 
         <TextView
             android:id="@+id/tv_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/tv_name"
-            android:background="@drawable/border"/>
+            android:background="@drawable/border"
+            android:textSize="20dp"
+            />
 
         <TextView
+            android:id="@+id/tv_resultValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0"
-            android:id="@+id/tv_resultValue"
-            android:textSize="20dp"
             android:padding="10dp"
+            android:text="0"
+            android:textSize="20dp"
 
-            >
-        </TextView>
+            ></TextView>
     </LinearLayout>
 
     <LinearLayout
@@ -63,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_weight="1"
+        android:layout_weight="0"
         android:gravity="center">
 
         <LinearLayout
