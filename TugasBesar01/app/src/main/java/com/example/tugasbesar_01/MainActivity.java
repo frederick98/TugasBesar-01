@@ -1,5 +1,6 @@
 package com.example.tugasbesar_01;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -28,28 +29,24 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-//        this.presenter = new Presenter(this);
-//        this.oa = new OperandAdaptor(this, this.presenter);
-//        this.numopList.setAdapter(this.oa);
-
-
-        // this.presenter = new MainPresenter(this);
-        //this.presenter.loadData();
-
         this.fragment1 = HalamanUtama.newInstance();
         this.fragment2 = AddFragment.newInstance(presenter);
         this.fragmentManager = this.getSupportFragmentManager();
 
+
         FragmentTransaction ft = this.fragmentManager.beginTransaction();
         ft.add(R.id.fragment_container, this.fragment1).addToBackStack(null).commit();
 
-        this.toolbar = findViewById(R.id.toolbar);
+        this.toolbar=findViewById(R.id.toolbar);
+        this.drawer=findViewById(R.id.drawer_layout);
         this.setSupportActionBar(toolbar);
+        ActionBarDrawerToggle adbt = new ActionBarDrawerToggle (this,this.drawer,toolbar,R.string.openDrawer,R.string.closeDrawer);
+        drawer.addDrawerListener(adbt);
+        adbt.syncState();
 
-//        ActionBarDrawerToggle abdt = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.openDrawer,R.string.closeDrawer);
-//        drawer.addDrawerListener(abdt);
-//        abdt.syncState();
+
+
+//
     }
 
     @Override
