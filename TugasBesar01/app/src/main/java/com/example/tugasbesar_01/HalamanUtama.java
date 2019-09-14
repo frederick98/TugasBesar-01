@@ -11,8 +11,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -114,5 +118,18 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         this.resultVal.setText("0");
     }
 
+    //swipe to delete [JANGAN DIHAPUS]
+    ItemTouchHelper.SimpleCallback itemTouchHelperCallback = new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            nla.numops.remove(viewHolder.getAdapterPosition());
+            nla.notifyDataSetChanged();
+        }
+    };
 
 }

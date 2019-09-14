@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected HalamanUtama fragment1;
     protected DrawerLayout drawer;
     private Toolbar toolbar;
+    protected Adapter.ViewHolder viewHolder;
 
 
 
@@ -42,11 +43,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.toolbar=findViewById(R.id.toolbar);
         this.drawer=findViewById(R.id.drawer_layout);
         this.setSupportActionBar(toolbar);
+
         ActionBarDrawerToggle adbt = new ActionBarDrawerToggle (this,this.drawer,toolbar,R.string.openDrawer,R.string.closeDrawer);
         drawer.addDrawerListener(adbt);
         adbt.syncState();
-
-
 
 //
     }
@@ -95,6 +95,21 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         } else if(opt.equals("/")){
             curr = curr / value;
         }
+
+        //ketika delete list dari tombol delete sebelah kanan [JANGAN DIHAPUS]
+//        if(viewHolder.opt.getText().equals("+")){
+//            curr = curr - Integer.parseInt(viewHolder.num.getText().toString());
+//        }
+//        else if(viewHolder.opt.getText().equals("-")){
+//            curr = curr + Integer.parseInt(viewHolder.num.getText().toString());
+//        }
+//        else if(viewHolder.opt.getText().equals("*")){
+//            curr = curr / Integer.parseInt(viewHolder.num.getText().toString());
+//        }
+//        else if(viewHolder.opt.getText().equals("/")){
+//            curr = curr * Integer.parseInt(viewHolder.num.getText().toString());
+//        }
+
 
         String res = String.valueOf(curr);
         this.fragment1.resultVal.setText(res);

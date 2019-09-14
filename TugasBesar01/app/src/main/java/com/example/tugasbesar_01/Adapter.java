@@ -8,6 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -77,7 +81,7 @@ public class Adapter extends BaseAdapter {
 
     }
 
-    private class ViewHolder implements View.OnClickListener{
+    protected class ViewHolder implements View.OnClickListener{
         protected TextView num;
         protected TextView opt;
         protected ImageButton btnDelete;
@@ -111,4 +115,6 @@ public class Adapter extends BaseAdapter {
             this.num.setText(convertNum);
         }
     }
+
+
 }
