@@ -91,9 +91,9 @@ public class Adapter extends BaseAdapter {
 
 
         public ViewHolder(View view, Adapter adapter) {
-            this.num = view.findViewById(R.id.tv_num_value);
-            this.opt = view.findViewById(R.id.tv_opt_value);
-            this.btnDelete = view.findViewById(R.id.btn_delete);
+            this.num = view.findViewById(R.id.nli_tv_num_value);
+            this.opt = view.findViewById(R.id.nli_tv_opt_value);
+            this.btnDelete = view.findViewById(R.id.nli_btn_delete);
 
             this.btnDelete.setOnClickListener(this);
             view.setOnClickListener(this);

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical">
-
 
     <LinearLayout
         android:layout_width="246dp"
@@ -13,32 +13,31 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/fl_tv_halUtamaFg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@string/fL_tv_calc"
-            android:id="@+id/tv_halUtamaFg"/>
+            android:text="@string/fl_tv_calc"/>
 
         <TextView
+            android:id="@+id/fl_tv_addFg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@string/fl_tv_add"
-            android:id="@+id/tv_addFg"/>
+            android:text="@string/fl_tv_add"/>
 
         <TextView
+            android:id="@+id/fl_tv_exit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:text="@string/fL_tv_exit"
-            android:id="@+id/tv_exit"/>
+            android:text="@string/fl_tv_exit"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="700dp">
         </TextView>
-
 
     </LinearLayout>
 

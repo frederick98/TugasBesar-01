@@ -49,19 +49,19 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.halaman_utama,container,false);
 
-        this.resultVal = view.findViewById(R.id.tv_resultValue);
+        this.resultVal = view.findViewById(R.id.hu_tv_resultValue);
 
         //this.btnAdd = view.findViewById(R.id.btn_add);
 
-        this.btnResult = view.findViewById(R.id.btn_result);
+        this.btnResult = view.findViewById(R.id.hu_btn_result);
         this.btnResult.setOnClickListener(this);
 
 
 
 
-         this.fab = view.findViewById(R.id.floating_action_button);
-         this.btnClear = view.findViewById(R.id.btn_clear);
-         this.btnDel = view.findViewById(R.id.btn_delete);
+         this.fab = view.findViewById(R.id.hu_floating_action_button);
+         this.btnClear = view.findViewById(R.id.hu_btn_clear);
+         this.btnDel = view.findViewById(R.id.nli_btn_delete);
 
 
 
@@ -69,7 +69,7 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         this.fab.setOnClickListener(this);
         this.btnClear.setOnClickListener(this);
 
-        this.numopList = view.findViewById(R.id.lv_history);
+        this.numopList = view.findViewById(R.id.hu_lv_history);
         this.nla = new Adapter(getActivity());
         numopList.setAdapter(this.nla);
         return view;

@@ -21,10 +21,9 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_left, container, false);
 
-        this.tv_halamanUtama = view.findViewById(R.id.tv_halUtamaFg);
-        this.tv_addFragment = view.findViewById(R.id.tv_addFg);
-        this.exit = view.findViewById(R.id.tv_exit);
-
+        this.tv_halamanUtama = view.findViewById(R.id.fl_tv_halUtamaFg);
+        this.tv_addFragment = view.findViewById(R.id.fl_tv_addFg);
+        this.exit = view.findViewById(R.id.fl_tv_exit);
 
         this.tv_halamanUtama.setOnClickListener(this);
         this.tv_addFragment.setOnClickListener(this);
@@ -45,7 +44,6 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
             throw new ClassCastException(context.toString()
                     +"must implement FragmentListener");
         }
-
     }
 
     @Override

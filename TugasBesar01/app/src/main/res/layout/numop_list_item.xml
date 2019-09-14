@@ -8,13 +8,13 @@
 
 
     <TextView
-        android:id="@+id/tv_opt_value"
+        android:id="@+id/nli_tv_opt_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""/>
 
     <TextView
-        android:id="@+id/tv_num_value"
+        android:id="@+id/nli_tv_num_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
@@ -23,13 +23,12 @@
         android:layout_height="wrap_content">
 
         <ImageButton
-            android:id="@+id/btn_delete"
+            android:id="@+id/nli_btn_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/ic_menu_delete"
             android:layout_alignParentRight="true"/>
 
     </RelativeLayout>
-
 
 </LinearLayout>

@@ -8,10 +8,10 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/fa_tv_title"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:text="@string/tv_add"
+        android:text="@string/fa_tv_add"
         android:textAlignment="center"
         android:textSize="24dp"/>
 
@@ -20,21 +20,21 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center" >
-        
+
         <TextView
-            android:id="@+id/tv_operator"
+            android:id="@+id/fa_tv_operator"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/tv_operator"
+            android:text="@string/fa_tv_operator"
             android:textSize="24dp"/>
 
         <Spinner
-            android:id="@+id/spinner1"
+            android:id="@+id/fa_spinner1"
             android:layout_width="167dp"
             android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:entries="@array/operator_arrays"
-            android:prompt="@string/operator_prompt"/>
+            android:entries="@array/fa_operator_arrays"
+            android:prompt="@string/fa_operator_prompt"/>
 
     </LinearLayout>
 
@@ -45,14 +45,14 @@
         android:gravity="center">
 
         <TextView
-            android:id="@+id/tv_operand"
+            android:id="@+id/fa_tv_operand"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="@string/tv_operand"
+            android:text="@string/fa_tv_operand"
             android:textSize="24dp"/>
 
         <EditText
-            android:id="@+id/et_input"
+            android:id="@+id/fa_et_input"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -67,10 +67,10 @@
         android:gravity="center">
 
         <Button
+            android:id="@+id/fa_btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_submit"
-            android:text="@string/tv_submit"
+            android:text="@string/fa_tv_submit"
             android:textAlignment="center">
         </Button>
     </LinearLayout>

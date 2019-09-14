@@ -16,13 +16,12 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
     Button submit;
     EditText input;
-    Spinner sp;
+    Spinner spinner;
     Presenter presenter;
     Adapter adapter;
     SaveDisplay saveDisplay;
 
     public AddFragment() {
-
     }
 
     public static AddFragment newInstance(Presenter presenter) {
@@ -33,14 +32,14 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.add_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_add, container, false);
 
-        this.input = view.findViewById(R.id.et_input);
+        this.input = view.findViewById(R.id.fa_et_input);
         this.adapter= new Adapter(getActivity());
 
-        this.sp = view.findViewById(R.id.spinner1);
+        this.spinner = view.findViewById(R.id.fa_spinner1);
 
-        this.submit = view.findViewById(R.id.btn_submit);
+        this.submit = view.findViewById(R.id.fa_btn_submit);
         this.submit.setOnClickListener(this);
 
 
@@ -53,7 +52,6 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         super.onAttach(context);
         if (context instanceof FragmentListener) {
             this.listener = (FragmentListener) context;
-
         } else {
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
@@ -62,8 +60,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == this.submit.getId()) {
-            Numop op = new Numop(this.sp.getSelectedItem().toString(),Integer.parseInt(this.input.getText().toString()));
-            listener.addList(op );
+            Numop numop = new Numop(this.spinner.getSelectedItem().toString(),Integer.parseInt(this.input.getText().toString()));
+            listener.addList(numop );
             listener.changeValue();
             listener.changePage(1);
         }

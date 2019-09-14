@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 
     @Override
     public void changeValue() { //ganti tv ResultValue halamanUtama
-        String opt = this.fragment2.sp.getSelectedItem().toString();
+        String opt = this.fragment2.spinner.getSelectedItem().toString();
         int value = Integer.parseInt(this.fragment2.input.getText().toString());
         int curr = Integer.parseInt(this.fragment1.resultVal.getText().toString());
         if (opt.equals("+")) {

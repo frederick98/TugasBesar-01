@@ -1,27 +1,30 @@
 <resources>
     <string name="app_name">TugasBesar-01</string>
 
-    <string name="btn_result">Result</string>
-    <string name="btn_clear">Clear</string>
-    <string name="btn_save">Save</string>
+    <string name="hu_btn_result">Result</string>
+    <string name="hu_btn_clear">Clear</string>
+    <string name="hu_btn_save">Save</string>
+    <string name="hu_tv_result">0</string>
     <string name="tv_name">Calculator</string>
-    <string name="tv_add">Add</string>
-    <string name="tv_operator">Operator :</string>
-    <string name="tv_operand">Operand :</string>
-    <string name="tv_submit">Submit</string>
-    <string name="operator_prompt">Pilih operator</string>
-    <string name="btn_add">Add New Operation</string>
-    <string name="openDrawer">open</string>
-    <string name="closeDrawer">close</string>
-    <string name="fL_tv_calc">Calculator</string>
-    <string name="fl_tv_add">Add Value</string>
-    <string name="fL_tv_exit">Exit</string>
-
-    <string-array name="operator_arrays">
+    <string name="fa_tv_add">Add New Operation</string>
+    <string name="fa_tv_operator">Operator :</string>
+    <string name="fa_tv_operand">Operand :</string>
+    <string name="fa_tv_submit">Submit</string>
+    <string name="fa_operator_prompt">Pilih operator</string>
+    <string name="fa_btn_add">Add New Operation</string>
+    <string-array name="fa_operator_arrays">
         <item>+</item>
         <item>-</item>
         <item>*</item>
         <item>/</item>
     </string-array>
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
+    <string name="fl_tv_calc">Calculator</string>
+    <string name="fl_tv_add">Add Value</string>
+    <string name="fl_tv_exit">Exit</string>
+    <string name="frd_tv_text">The Result is :</string>
+    <string name="frd_tv_resultInit">0</string>
+    <string name="frd_btn_close">Close</string>
 
 </resources>
