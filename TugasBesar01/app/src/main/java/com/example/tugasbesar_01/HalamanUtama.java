@@ -24,10 +24,11 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
     //Button btnAdd;
     Button btnResult;
     Button btnClear;
+    Button btnSave;
+    Button btnDel;
+    FloatingActionButton fab;
     FragmentListener listener;
     TextView resultVal;
-    FloatingActionButton fab;
-    Button btnDel;
 
     protected Presenter presenter;
     protected Adapter nla;
@@ -49,27 +50,24 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
         View view = inflater.inflate(R.layout.halaman_utama,container,false);
 
+        //semua method inisialisasi findviewbyid()
         this.resultVal = view.findViewById(R.id.hu_tv_resultValue);
-
         //this.btnAdd = view.findViewById(R.id.btn_add);
-
         this.btnResult = view.findViewById(R.id.hu_btn_result);
-        this.btnResult.setOnClickListener(this);
-
-
-
-
-         this.fab = view.findViewById(R.id.hu_floating_action_button);
-         this.btnClear = view.findViewById(R.id.hu_btn_clear);
-         this.btnDel = view.findViewById(R.id.nli_btn_delete);
-
-
-
-       // this.add_Button.setOnClickListener(this);
-        this.fab.setOnClickListener(this);
-        this.btnClear.setOnClickListener(this);
-
+        this.btnSave = view.findViewById(R.id.hu_btn_save);
+        this.btnClear = view.findViewById(R.id.hu_btn_clear);
+        this.btnDel = view.findViewById(R.id.nli_btn_delete);
+        this.fab = view.findViewById(R.id.hu_floating_action_button);
         this.numopList = view.findViewById(R.id.hu_lv_history);
+
+        //semua method setonclicklistener()
+        // this.add_Button.setOnClickListener(this);
+        this.btnResult.setOnClickListener(this);
+        this.btnSave.setOnClickListener(this);
+        this.btnClear.setOnClickListener(this);
+        this.fab.setOnClickListener(this);
+
+        //inisialisasi adapter & set adapter
         this.nla = new Adapter(getActivity());
         numopList.setAdapter(this.nla);
         return view;
@@ -81,11 +79,9 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
-
         }
         else{
-            throw new ClassCastException(context.toString()
-                    +"must implement FragmentListener");
+            throw new ClassCastException(context.toString() + "must implement FragmentListener");
         }
 
     }
@@ -93,17 +89,19 @@ public class HalamanUtama extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        if(view.getId()==this.fab.getId()){
+        if(view.getId() == this.fab.getId()){
             this.listener.changePage(2);
         }
         else if (view.getId() == this.btnClear.getId()){
             this.listener.clearList();
         }
-        else if(view.getId()==this.btnResult.getId())
-        {
+        else if(view.getId() == this.btnResult.getId()){
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ResultDialogFragment resultDialogFragment = new ResultDialogFragment();
             resultDialogFragment.show(ft,resultVal.getText().toString());
+        }else if(view.getId() == this.btnSave.getId()){
+            //ini ni yg jadi masalah
+            //this.listener.saveList(numops);
         }
     }
 

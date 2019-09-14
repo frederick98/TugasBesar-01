@@ -2,6 +2,8 @@ package com.example.tugasbesar_01;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.text.TextUtils;
 
 public class SaveDisplay {
 
@@ -40,26 +42,6 @@ public class SaveDisplay {
         return sharedPref.getString(KEY_SPINNER,"");
     }
 
-    /*
-    public void saveListview(Numop numop)
-    {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("label", String.valueOf(numop));
-        editor.apply();
-    }
 
-    public void onResume()
-    {
-        super.onResume();
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String previousText= preferences.getString("label","");
-        if(!TextUtils.isEmpty(previousText))
-        {
-            this.fragment1.nla.add((Numop) this.fragment1.numopList.getSelectedItem());
-            this.fragment1.nla.notifyDataSetChanged();
-        }
-    }
 
-     */
 }

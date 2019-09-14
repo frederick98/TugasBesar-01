@@ -7,7 +7,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ListView;
 
@@ -137,5 +140,24 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         fragment1.addListview(n);
     }
 
+
+    @Override
+    public void saveList(Numop numop){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("label", String.valueOf(numop));
+        editor.apply();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String previousText= preferences.getString("label","");
+        if(!TextUtils.isEmpty(previousText)){
+            this.fragment1.nla.add((Numop) this.fragment1.numopList.getSelectedItem());
+            this.fragment1.nla.notifyDataSetChanged();
+        }
+    }
 }
 

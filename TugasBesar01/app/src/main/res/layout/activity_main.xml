@@ -42,8 +42,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:name="com.example.tugasbesar_01.LeftFragment"
-            android:id="@id/left_drawer">
-        </fragment>
-
+            android:id="@id/left_drawer"/>
     </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

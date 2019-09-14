@@ -81,6 +81,8 @@ public class Adapter extends BaseAdapter {
 
     }
 
+
+
     protected class ViewHolder implements View.OnClickListener{
         protected TextView num;
         protected TextView opt;
