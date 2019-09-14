@@ -31,7 +31,7 @@
             android:text="@string/tv_name"
             android:background="@drawable/border"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:textSize="20dp"/>
 
         <TextView
             android:id="@+id/hu_tv_resultValue"
@@ -39,9 +39,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="@string/hu_tv_result"
-            android:textSize="20dp">
-
-        </TextView>
+            android:textSize="20dp"/>
     </LinearLayout>
 
     <LinearLayout
@@ -53,8 +51,7 @@
         <ListView
             android:id="@+id/hu_lv_history"
             android:layout_width="match_parent"
-            android:layout_height="654dp">
-        </ListView>
+            android:layout_height="654dp"/>
     </LinearLayout>
 
     <LinearLayout
