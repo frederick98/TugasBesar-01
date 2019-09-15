@@ -1,18 +1,28 @@
+/*
+    created by:
+        - 2016730035 Lanang Galih Saputro
+        - 2016730040 Frederick
+        - 2016730045 Reynaldi Irfan Anwar
+ */
 package com.example.tugasbesar_01;
 
+/*
+    needed to import class shown below
+ */
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.Fragment;
 import android.widget.TextView;
 
+import androidx.fragment.app.Fragment;
+
 public class LeftFragment extends Fragment implements View.OnClickListener {
-    TextView tv_halamanUtama;
-    TextView tv_addFragment;
-    TextView exit;
-    FragmentListener listener;
+    protected TextView tv_halamanUtama;
+    protected TextView tv_addFragment;
+    protected TextView exit;
+    protected FragmentListener listener;
 
     public LeftFragment(){}
 
@@ -21,10 +31,12 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_left, container, false);
 
+        //findViewById initialization
         this.tv_halamanUtama = view.findViewById(R.id.fl_tv_halUtamaFg);
         this.tv_addFragment = view.findViewById(R.id.fl_tv_addFg);
         this.exit = view.findViewById(R.id.fl_tv_exit);
 
+        //setOnClickListener method initialization
         this.tv_halamanUtama.setOnClickListener(this);
         this.tv_addFragment.setOnClickListener(this);
         this.exit.setOnClickListener(this);
@@ -34,15 +46,12 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onAttach(Context context){
-
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
-
         }
         else{
-            throw new ClassCastException(context.toString()
-                    +"must implement FragmentListener");
+            throw new ClassCastException(context.toString() + "must implement FragmentListener");
         }
     }
 
@@ -59,4 +68,3 @@ public class LeftFragment extends Fragment implements View.OnClickListener {
         }
     }
 }
-

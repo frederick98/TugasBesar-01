@@ -1,5 +1,14 @@
+/*
+    created by:
+        - 2016730035 Lanang Galih Saputro
+        - 2016730040 Frederick
+        - 2016730045 Reynaldi Irfan Anwar
+ */
 package com.example.tugasbesar_01;
 
+/*
+    needed to import class shown below
+ */
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,20 +20,17 @@ import android.widget.Spinner;
 
 import androidx.fragment.app.Fragment;
 
-
 public class AddFragment extends Fragment implements View.OnClickListener {
     FragmentListener listener;
     Button submit;
     EditText input;
     Spinner spinner;
-    Presenter presenter;
     Adapter adapter;
-    SaveDisplay saveDisplay;
 
     public AddFragment() {
     }
 
-    public static AddFragment newInstance(Presenter presenter) {
+    public static AddFragment newInstance() {
         AddFragment fragment = new AddFragment();
         return fragment;
     }
@@ -34,25 +40,25 @@ public class AddFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add, container, false);
 
+        //findViewById initialization
         this.input = view.findViewById(R.id.fa_et_input);
-        this.adapter= new Adapter(getActivity());
-
         this.spinner = view.findViewById(R.id.fa_spinner1);
-
         this.submit = view.findViewById(R.id.fa_btn_submit);
-        this.submit.setOnClickListener(this);
+        
+        this.adapter = new Adapter(getActivity());
 
+        this.submit.setOnClickListener(this);
 
         return view;
     }
 
     @Override
     public void onAttach(Context context) {
-
         super.onAttach(context);
         if (context instanceof FragmentListener) {
             this.listener = (FragmentListener) context;
-        } else {
+        }
+        else {
             throw new ClassCastException(context.toString() + " must implement FragmentListener");
         }
     }
@@ -60,12 +66,10 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if (view.getId() == this.submit.getId()) {
-            Numop numop = new Numop(this.spinner.getSelectedItem().toString(),Integer.parseInt(this.input.getText().toString()));
-            listener.addList(numop );
+            Numop numop = new Numop(this.spinner.getSelectedItem().toString(), Integer.parseInt(this.input.getText().toString()));
+            listener.addList(numop);
             listener.changeValue();
             listener.changePage(1);
         }
     }
-    
-
 }
